@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data Diri</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Form Data Diri</h2>
+        <form id="dataForm">
+            <div class="input-group">
+                <label for="name">Nama</label>
+                <input type="text" id="name" placeholder="Masukkan nama" required>
+                <div id="nameError" class="error-message"></div>
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Masukkan email" required>
+                <div id="emailError" class="error-message"></div>
+            </div>
+            <div class="input-group">
+                <label for="address">Alamat</label>
+                <textarea id="address" placeholder="Masukkan alamat" required></textarea>
+                <div id="addressError" class="error-message"></div>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+
+        <div id="output" class="output-container" style="display:none;">
+          <table id="outputTable">
+          <tr>
+           <td>Nama</td>
+           <td id="outputName"></td>
+          </tr>
+          <tr>
+           <td>Email</td>
+           <td id="outputEmail"></td>
+          </tr>
+          <tr>
+           <td>Alamat</td>
+           <td id="outputAddress"></td>
+          </tr>
+          </table>
+      </div>
+
+    <script>
+        const form = document.getElementById('dataForm');
+        const outputContainer = document.getElementById('output');
+        const outputName = document.getElementById('outputName');
+        const outputEmail = document.getElementById('outputEmail');
+        const outputAddress = document.getElementById('outputAddress');
+        const nameError = document.getElementById('nameError');
+        const emailError = document.getElementById('emailError');
+        const addressError = document.getElementById('addressError');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Reset error messages
+            nameError.textContent = '';
+            emailError.textContent = '';
+            addressError.textContent = '';
+
+            // Get input values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const address = document.getElementById('address').value.trim();
+
+            let isValid = true;
+
+            // Validate inputs
+            if (name === '') {
+                nameError.textContent = 'Nama harus diisi';
+                isValid = false;
+            }
+
+            if (email === '') {
+                emailError.textContent = 'Email harus diisi';
+                isValid = false;
+            }
+
+            if (address === '') {
+                addressError.textContent = 'Alamat harus diisi';
+                isValid = false;
+            }
+
+            // If valid, show the output
+            if (isValid) {
+                outputName.textContent = name;
+                outputEmail.textContent = email;
+                outputAddress.textContent = address;
+                outputContainer.style.display = 'block';
+            }
+        });
+    </script>
+
+</body>
+</html>

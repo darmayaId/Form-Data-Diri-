@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #cfd9df);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 370px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 95%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+textarea {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 5px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.submit-btn {
+    width: 50%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin: auto;
+    display: block;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+/* Style untuk container output */
+.output-container {
+          margin-top: 7px;
+          background-color: #f9f9f9;
+          padding: 15px;
+          border-radius: 5px;
+          box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+      }
+      
+      /* Style untuk tabel output */
+      #outputTable {
+          width: 100%;
+          border-collapse: collapse; /* Menghapus jarak antar border */
+      }
+      
+      /* Border dan padding untuk setiap sel */
+      #outputTable td {
+          padding: 10px;
+          border: 1px solid #ddd; /* Border untuk setiap sel */
+      }
+      
+      /* Style untuk kolom label (Nama, Email, Alamat) */
+      #outputTable td:first-child {
+          background-color: #f2f2f2; /* Warna latar belakang kolom label */
+          width: 30%;
+      }
+      
+
+.output-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
